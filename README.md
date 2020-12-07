@@ -25,8 +25,12 @@ A tool to answer the question, "What is the best time to post an article on Dev.
 
 ### Dependencies
 
+- [date-fns](https://github.com/date-fns/date-fns) - ⏳ Modern JavaScript date utility library ⌛️.
+- [node-fetch](https://github.com/node-fetch/node-fetch) - A light-weight module that brings Fetch API to Node.js.
+
 ### DevDependencies
 
+- [env-cmd](https://github.com/toddbluhm/env-cmd) - Setting the environment from a file.
 - [eslint](https://eslint.org/) - Find and fix problems in your JavaScript code.
 - [rimraf](https://github.com/isaacs/rimraf) - A `rm -rf` util for nodejs.
 - [typescript](https://www.typescriptlang.org/) - TypeScript is a superset of JavaScript that compiles to clean JavaScript output.
