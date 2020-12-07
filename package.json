@@ -1,6 +1,6 @@
 {
   "name": "post-time-tool",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A tool to answer the question, \"What is the best time to post an article on Dev.to?\"",
   "main": "index.js",
   "scripts": {
