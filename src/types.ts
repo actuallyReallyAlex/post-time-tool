@@ -27,6 +27,20 @@ export interface Article {
   user: User;
 }
 
+export interface DayGroup {
+  day:
+    | "Sunday"
+    | "Monday"
+    | "Tuesday"
+    | "Wednesday"
+    | "Thursday"
+    | "Friday"
+    | "Saturday";
+  group: Article[];
+  positiveReactionsAverage: number;
+  positiveReactionsSum: number;
+}
+
 interface FlareTag {
   bg_color_hex: string;
   name: string;
