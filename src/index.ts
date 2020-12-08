@@ -1,9 +1,8 @@
-import { getTotalArticles } from "./commands";
+import { analyze } from "./commands";
 
 const main = async (): Promise<void> => {
   try {
-    const num = await getTotalArticles(false);
-    console.log(`Total Articles in Top - ${num}`);
+    await analyze(true);
   } catch (error) {
     console.error(error);
   }
