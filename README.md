@@ -25,6 +25,7 @@ A tool to answer the question, "What is the best time to post an article on Dev.
 
 ### Dependencies
 
+- [chalk](https://github.com/chalk/chalk) - Terminal string styling done right.
 - [date-fns](https://github.com/date-fns/date-fns) - ⏳ Modern JavaScript date utility library ⌛️.
 - [node-fetch](https://github.com/node-fetch/node-fetch) - A light-weight module that brings Fetch API to Node.js.
 

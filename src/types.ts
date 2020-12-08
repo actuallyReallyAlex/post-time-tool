@@ -27,6 +27,27 @@ export interface Article {
   user: User;
 }
 
+export type Day =
+  | "Sunday"
+  | "Monday"
+  | "Tuesday"
+  | "Wednesday"
+  | "Thursday"
+  | "Friday"
+  | "Saturday";
+
+export interface DayGroup {
+  day: Day;
+  group: Article[];
+  positiveReactionsAverage: number;
+  positiveReactionsSum: number;
+  times: DayTimes;
+}
+
+interface DayTimes {
+  [index: number]: number;
+}
+
 interface FlareTag {
   bg_color_hex: string;
   name: string;
@@ -39,6 +60,10 @@ interface Organization {
   slug: string;
   profile_image: string;
   profile_image_90: string;
+}
+
+export interface TimeList {
+  [index: number]: number;
 }
 
 interface User {
