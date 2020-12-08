@@ -107,7 +107,7 @@ export const getTotalArticles = async (log = false): Promise<number> => {
     let nextGuess = highLimit;
 
     while (!stop) {
-      const articleData = await getArticleData(10000, 1, nextGuess);
+      const articleData = await getArticleData(1, nextGuess);
 
       const currentGuess = nextGuess;
 
