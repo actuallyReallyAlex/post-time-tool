@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Ability to Find Most Successful Day of Week - [6](https://github.com/alexlee-dev/post-time-tool/issues/6)
 - Ability to Find Most Successful Time of Day - [7](https://github.com/alexlee-dev/post-time-tool/issues/7)
-- Ability to Find Total Number of Top Artricles - [8](https://github.com/alexlee-dev/post-time-tool/issues/8)
+- Ability to Find Total Number of Top Articles - [8](https://github.com/alexlee-dev/post-time-tool/issues/8)
 
 ### Changed
 
