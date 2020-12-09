@@ -1,7 +1,6 @@
 import chalk from "chalk";
-import differenceInDays from "date-fns/differenceInDays";
-import format from "date-fns/format";
-import startOfYear from "date-fns/startOfYear";
+import fse from "fs-extra";
+import path from "path";
 
 import {
   analyzeArticles,
@@ -14,46 +13,26 @@ import {
 import { getArticleData } from "./request";
 import { createDayGroups } from "./util";
 
-import { DayGroup } from "./types";
+import { Article, DayGroup } from "./types";
 
-export const analyze = async (thisYear = false): Promise<void> => {
+export const analyze = async (data: Article[]): Promise<void> => {
   try {
-    let daysSinceStartOfYear = 0;
-
-    if (thisYear) {
-      const startOfYearDate = startOfYear(Date.now());
-      daysSinceStartOfYear = differenceInDays(
-        Date.now(),
-        startOfYear(Date.now())
-      );
-      console.log(
-        `It's been ${chalk.cyanBright.bold(
-          daysSinceStartOfYear
-        )} days since ${format(startOfYearDate, "PPP")}.`
-      );
-    }
-
-    const data = await getArticleData(
-      thisYear ? daysSinceStartOfYear : 10000,
-      1000,
-      1
-    );
-
-    if (!data) {
-      throw new Error("No data!");
-    }
-
     const dayGroups: DayGroup[] = createDayGroups();
 
     analyzeArticles(data, dayGroups);
 
     analyzeDayGroups(dayGroups);
 
+    await fse.writeJSON(path.join(__dirname, "../output.json"), dayGroups, {
+      spaces: 2,
+    });
+
     // * Most published day of week
     const mostPublishedDay = getMostPublishedDay(dayGroups);
+    console.log("");
     console.log(
       `Of the top ${chalk.cyanBright.bold(
-        "1,000"
+        data.length
       )} articles in that time, most are published on a ${chalk.cyanBright.bold(
         mostPublishedDay
       )}.`
@@ -93,7 +72,10 @@ export const analyze = async (thisYear = false): Promise<void> => {
   }
 };
 
-export const getTotalArticles = async (log = false): Promise<number> => {
+export const getTotalArticles = async (
+  topDays = 0,
+  log = false
+): Promise<number> => {
   try {
     // * Real easy logic --
     // * If the guess is too high, set that to the highLimit, take a halfway point between both limits and try again
@@ -107,7 +89,11 @@ export const getTotalArticles = async (log = false): Promise<number> => {
     let nextGuess = highLimit;
 
     while (!stop) {
-      const articleData = await getArticleData(10000, 1, nextGuess);
+      const articleData = await getArticleData(
+        1,
+        nextGuess,
+        topDays > 0 ? topDays : undefined
+      );
 
       const currentGuess = nextGuess;
 
