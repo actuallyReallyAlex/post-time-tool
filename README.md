@@ -33,7 +33,9 @@ A tool to answer the question, "What is the best time to post an article on Dev.
 
 - [chalk](https://github.com/chalk/chalk) - Terminal string styling done right.
 - [date-fns](https://github.com/date-fns/date-fns) - ⏳ Modern JavaScript date utility library ⌛️.
+- [fs-extra](https://github.com/jprichardson/node-fs-extra) - Node.js: extra methods for the fs object like copy(), remove(), mkdirs().
 - [node-fetch](https://github.com/node-fetch/node-fetch) - A light-weight module that brings Fetch API to Node.js.
+- [progress](https://github.com/visionmedia/node-progress) - Flexible ascii progress bar for nodejs.
 
 ### DevDependencies
 
