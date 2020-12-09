@@ -11,6 +11,12 @@
     <br> 
 </p>
 
+<p>TLDR:<br></p>
+<p>Of the top 209385 articles in that time, most are published on a Monday.<br>
+However, the most successful day to publish an article is on Sunday.<br>
+The most successful hour of the most successful day is 8:00:00 AM GMT-8.<br>
+The most successful hour throughout the week is 7:00:00 AM GMT-8.</p>
+
 ## 📝 Table of Contents
 
 - [About](#about)
